@@ -1,12 +1,26 @@
 import java.util.*;
+import algorithmProblems.KnapsackProblem;
+import algorithmProblems.Item;
 
 public class Main {
     public static void main(String[] args) {
-        int[] originData = {8,9,1,7,2,3,5,4,6,0};
-        SortingAlgorithm sa = new SortingAlgorithm();
-        int[] res = sa.heapSort(originData);
-        StringBuffer sb = int2String(res);
-        System.out.println(sb);
+        LinkedList<Item> items = new LinkedList<>();
+        int[] weights = {2,2,6,5,4};
+        int[] values = {6,3,5,4,6};
+        for (int i=0;i<5;i++){
+            items.add( new Item(weights[i], values[i]) );
+        }
+
+        KnapsackProblem kp = new KnapsackProblem(items,5,10);
+        int res = kp.getResult();
+        System.out.println(res);
+
+
+//        int[] originData = {8,9,1,7,2,3,5,4,6,0};
+//        SortingAlgorithm sa = new SortingAlgorithm();
+//        int[] res = sa.heapSort(originData);
+//        StringBuffer sb = int2String(res);
+//        System.out.println(sb);
 
     }
 
