@@ -5,15 +5,16 @@ import algorithmProblems.Item;
 public class Main {
     public static void main(String[] args) {
         LinkedList<Item> items = new LinkedList<>();
-        int[] weights = {2,2,6,5,4};
-        int[] values = {6,3,5,4,6};
+        int[] weights = {4,5,6,2,2};
+        int[] values = {6,4,5,3,6};
         for (int i=0;i<5;i++){
             items.add( new Item(weights[i], values[i]) );
         }
 
         KnapsackProblem kp = new KnapsackProblem(items,5,10);
-        int res = kp.getResult();
+        int res = kp.getResult(5,10);
         System.out.println(res);
+        kp.getDecison();
 
 
 //        int[] originData = {8,9,1,7,2,3,5,4,6,0};
