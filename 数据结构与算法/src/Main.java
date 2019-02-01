@@ -1,10 +1,23 @@
 import java.util.*;
 import algorithmProblems.KnapsackProblem;
 import algorithmProblems.Item;
+import algorithmProblems.TSP;
 
 public class Main {
     public static void main(String[] args) {
-        LinkedList<Item> items = new LinkedList<>();
+        // TSP 问题
+        int[][] distance = {{10000,10,15,10000},{10,10000,35,25},{15,35,10000,30},{10000,25,30,10000}};
+        TSP tsp = new TSP();
+        int[][] a = tsp.slove(distance);
+        for (int i=0;i<a.length;i++) {
+            for (int j = 0; j < a[i].length; j++)
+                System.out.printf("%-5d    ",a[i][j]);
+            System.out.println();
+        }
+
+
+// 背包问题
+/*        LinkedList<Item> items = new LinkedList<>();
         int[] weights = {4,5,6,2,2};
         int[] values = {6,4,5,3,6};
         for (int i=0;i<5;i++){
@@ -14,7 +27,7 @@ public class Main {
         KnapsackProblem kp = new KnapsackProblem(items,5,10);
         int res = kp.getResult(5,10);
         System.out.println(res);
-        kp.getDecison();
+        kp.getDecison();*/
 
 
 //        int[] originData = {8,9,1,7,2,3,5,4,6,0};
